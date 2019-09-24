@@ -1,0 +1,24 @@
+Private Sub BinToDec()
+        Dim iloscZnakow As Integer
+        Dim potega As Integer
+        Dim cyfra As Integer
+        Dim suma As Integer
+        Dim temp As String
+        'Długość ciągu znaków
+        Label1.Text = Len(TextBox1.Text)
+        iloscZnakow = CInt(Len(TextBox1.Text))
+        'GetChar(String, Int32)
+        Label2.Text = ""
+        potega = 0
+        suma = 0
+        'Od ostatniego znaku do pierwszego
+        For index As Integer = iloscZnakow To 1 Step -1
+            temp = GetChar(TextBox1.Text, index)
+            If temp = "1" Then
+                cyfra = (2 ^ potega)
+                suma = suma + cyfra
+            End If
+            potega = potega + 1
+        Next index
+        Label2.Text = CStr(suma)
+    End Sub

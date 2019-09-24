@@ -1,0 +1,12 @@
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\bin\Debug\Konwerter Bin Dec Hex.exe.config
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\bin\Debug\Konwerter Bin Dec Hex.exe
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\bin\Debug\Konwerter Bin Dec Hex.pdb
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\bin\Debug\Konwerter Bin Dec Hex.xml
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\obj\Debug\Konwerter Bin Dec Hex.vbprojAssemblyReference.cache
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\obj\Debug\Konwerter_Bin_Dec_Hex.FormularzGlowny.resources
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\obj\Debug\Konwerter_Bin_Dec_Hex.Resources.resources
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\obj\Debug\Konwerter Bin Dec Hex.vbproj.GenerateResource.cache
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\obj\Debug\Konwerter Bin Dec Hex.vbproj.CoreCompileInputs.cache
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\obj\Debug\Konwerter Bin Dec Hex.exe
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\obj\Debug\Konwerter Bin Dec Hex.xml
+D:\Projekty\Moje proste projekty VB\Konwerter Bin Dec Hex\Konwerter Bin Dec Hex\obj\Debug\Konwerter Bin Dec Hex.pdb
