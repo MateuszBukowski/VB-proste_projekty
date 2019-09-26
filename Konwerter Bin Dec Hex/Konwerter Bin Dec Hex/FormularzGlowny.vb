@@ -9,7 +9,7 @@
         ElseIf radioDec.Checked = True Then
             lblBin.Text = "BIN: " & DecToBin(CInt(textbWprowadz.Text))
         ElseIf radioHex.Checked = True Then
-            HexToBin()
+            lblBin.Text = HexToBin(textbWprowadz.Text)
         Else
             MessageBox.Show("Wskaż jakiego rodzaju liczbę prowadziłeś.")
         End If
@@ -20,14 +20,14 @@
         ElseIf radioDec.Checked = True Then
             lblDec.Text = "DEC: " & textbWprowadz.Text
         ElseIf radioHex.Checked = True Then
-            HexToDec()
+            lblDec.Text = HexToDec(textbWprowadz.Text)
         Else
             MessageBox.Show("Wskaż jakiego rodzaju liczbę prowadziłeś.")
         End If
     End Sub
     Private Sub BtnHex_Click(sender As Object, e As EventArgs) Handles btnHex.Click
         If radioBin.Checked = True Then
-            BinToHex()
+            lblHex.Text = "HEX: " & BinToHex(textbWprowadz.Text)
         ElseIf radioDec.Checked = True Then
             DecToHex()
         ElseIf radioHex.Checked = True Then
@@ -59,14 +59,18 @@
         'Wpisz wynik do etykiety
         Return strModulo
     End Function
-    Private Sub HexToBin()
+    Private Function HexToBin(ByVal strLiczbaHex As String) As String
         'Hex to bin
-        lblBin.Text = "BIN: Heks"
-    End Sub
-    Private Sub HexToDec()
+        Dim strWynik As String
+        strWynik = "BIN: Heks"
+        Return strWynik
+    End Function
+    Private Function HexToDec(ByVal strLiczbaHex As String) As String
         'HexToDec
-        lblDec.Text = "DEC: Heks"
-    End Sub
+        Dim strWynik As String
+        strWynik = "DEC: Heks"
+        Return strWynik
+    End Function
     Private Sub BinToDec()
         Dim iloscZnakow As Integer
         Dim potega As Integer
@@ -92,10 +96,12 @@
         lblDec.Text = "DEC: " & CStr(suma)
 
     End Sub
-    Private Sub BinToHex()
+    Private Function BinToHex(ByVal strLiczbaHex As String) As String
         'bin to hex
-        lblHex.Text = "HEX: Heks"
-    End Sub
+        Dim strWynik As String
+        strWynik = "Heks"
+        Return strWynik
+    End Function
     Private Sub DecToHex()
         Dim dblOblicz As Double
         Debug.WriteLine("**************************************")
