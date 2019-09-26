@@ -2,7 +2,7 @@
     Private dblRoznica As Double
     Private dblWynik As Double
     Private dblMaxPotega As Double
-    Private strWynik As String
+    Private strWynikDecHex As String
     Private Sub BtnBin_Click(sender As Object, e As EventArgs) Handles btnBin.Click
         If radioBin.Checked = True Then
             lblBin.Text = "BIN: " & textbWprowadz.Text
@@ -16,7 +16,7 @@
     End Sub
     Private Sub BtnDec_Click(sender As Object, e As EventArgs) Handles btnDec.Click
         If radioBin.Checked = True Then
-            BinToDec()
+            lblDec.Text = "DEC: " & BinToDec(textbWprowadz.Text)
         ElseIf radioDec.Checked = True Then
             lblDec.Text = "DEC: " & textbWprowadz.Text
         ElseIf radioHex.Checked = True Then
@@ -29,7 +29,7 @@
         If radioBin.Checked = True Then
             lblHex.Text = "HEX: " & BinToHex(textbWprowadz.Text)
         ElseIf radioDec.Checked = True Then
-            DecToHex()
+            lblHex.Text = "HEX: " & DecToHex(textbWprowadz.Text)
         ElseIf radioHex.Checked = True Then
             lblHex.Text = "HEX: " & textbWprowadz.Text
         Else
@@ -71,21 +71,22 @@
         strWynik = "DEC: Heks"
         Return strWynik
     End Function
-    Private Sub BinToDec()
+    Private Function BinToDec(ByVal strLiczbaBin As String) As String
         Dim iloscZnakow As Integer
         Dim potega As Integer
         Dim cyfra As Double
         Dim suma As Double
         Dim temp As String
+        Dim strWynik As String
         'Długość ciągu znaków
-        iloscZnakow = CInt(Len(textbWprowadz.Text))
+        iloscZnakow = CInt(Len(strLiczbaBin))
         'GetChar(String, Int32)
-        lblDec.Text = "DEC: "
+        'lblDec.Text = "DEC: "
         potega = 0
         suma = 0
         'Od ostatniego znaku do pierwszego
         For index As Integer = iloscZnakow To 1 Step -1
-            temp = GetChar(textbWprowadz.Text, index)
+            temp = GetChar(strLiczbaBin, index)
             If temp = "1" Then
                 cyfra = (2 ^ potega)
                 suma = suma + cyfra
@@ -93,20 +94,21 @@
             potega = potega + 1
         Next index
         'Wypełij etykiete DEC wynikiem
-        lblDec.Text = "DEC: " & CStr(suma)
-
-    End Sub
+        'lblDec.Text = "DEC: " & CStr(suma)
+        strWynik = CStr(suma)
+        Return strWynik
+    End Function
     Private Function BinToHex(ByVal strLiczbaHex As String) As String
         'bin to hex
         Dim strWynik As String
         strWynik = "Heks"
         Return strWynik
     End Function
-    Private Sub DecToHex()
+    Private Function DecToHex(ByRef strLiczbaDec As String) As String
         Dim dblOblicz As Double
-        Debug.WriteLine("**************************************")
+        'Debug.WriteLine("**************************************")
         'Ustaw początek napisu w etykiecie
-        lblHex.Text = "HEX: "
+        'lblHex.Text = "HEX: "
         dblOblicz = CDbl(textbWprowadz.Text)
         Do While dblOblicz >= 16
             ZnajdzNajwiekszaPotege(dblOblicz)
@@ -117,13 +119,14 @@
             Debug.Write("dblWynik: ")
             Debug.WriteLine(dblWynik)
             KonwertujWynikDecNaHex(dblWynik)
-            lblHex.Text = lblHex.Text & strWynik
+            lblHex.Text = lblHex.Text & strWynikDecHex
             dblOblicz = dblOblicz - (dblWynik * (16 ^ dblMaxPotega))
         Loop
         'Wstaw resztę
         KonwertujWynikDecNaHex(dblOblicz)
-        lblHex.Text = lblHex.Text & CStr(strWynik)
-    End Sub
+        Return strWynikDecHex
+        'lblHex.Text = "HEX: " & CStr(strWynik)
+    End Function
     Private Sub ZnajdzNajwiekszaPotege(ByRef dblLiczba As Double)
         Dim dblPotega16 As Double
         Dim dblWynikPotegi As Double
@@ -142,21 +145,21 @@
     Private Sub KonwertujWynikDecNaHex(ByRef dblDec As Double)
         Select Case dblDec
             Case 1, 2, 3, 4, 5, 6, 7, 8, 9
-                strWynik = CStr(dblWynik)
+                strWynikDecHex = CStr(dblWynik)
             Case 10
-                strWynik = "A"
+                strWynikDecHex = "A"
             Case 11
-                strWynik = "B"
+                strWynikDecHex = "B"
             Case 12
-                strWynik = "C"
+                strWynikDecHex = "C"
             Case 13
-                strWynik = "D"
+                strWynikDecHex = "D"
             Case 14
-                strWynik = "E"
+                strWynikDecHex = "E"
             Case 15
-                strWynik = "F"
+                strWynikDecHex = "F"
             Case 16
-                strWynik = "G"
+                strWynikDecHex = "G"
         End Select
     End Sub
 End Class
