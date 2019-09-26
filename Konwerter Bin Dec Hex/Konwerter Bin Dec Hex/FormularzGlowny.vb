@@ -7,7 +7,7 @@
         If radioBin.Checked = True Then
             lblBin.Text = "BIN: " & textbWprowadz.Text
         ElseIf radioDec.Checked = True Then
-            DecToBin()
+            lblBin.Text = "BIN: " & DecToBin(CInt(textbWprowadz.Text))
         ElseIf radioHex.Checked = True Then
             HexToBin()
         Else
@@ -41,14 +41,14 @@
         lblHex.Text = "HEX: "
         lblDec.Text = "DEC: "
     End Sub
-    Private Sub DecToBin()
+    Private Function DecToBin(ByVal intLiczbaDec As Integer) As String
         'Binarny na dzieisętny
         'Algorytm: dzielimy na dwa i zapisuję resztę z dzielenia 1 lub zero do stringa.
         'Dopólki wynik nie jest mniejszy od 1.
         'Od dołu do góry czytamy (od ostatniego do pierwszego) i wychodzi liczba binarna.
         Dim intLiczba As Integer
         Dim strModulo As String
-        intLiczba = CInt(textbWprowadz.Text)
+        intLiczba = intLiczbaDec
         strModulo = ""
         Do While intLiczba <> 0
             strModulo = strModulo & CStr(intLiczba Mod 2)
@@ -57,8 +57,8 @@
         'Odwróć string strModulo
         strModulo = StrReverse(strModulo)
         'Wpisz wynik do etykiety
-        lblBin.Text = "BIN: " & strModulo
-    End Sub
+        Return strModulo
+    End Function
     Private Sub HexToBin()
         'Hex to bin
         lblBin.Text = "BIN: Heks"
