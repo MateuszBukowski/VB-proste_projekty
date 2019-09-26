@@ -106,9 +106,9 @@
     End Function
     Private Function DecToHex(ByRef strLiczbaDec As String) As String
         Dim dblOblicz As Double
-        'Debug.WriteLine("**************************************")
-        'Ustaw początek napisu w etykiecie
-        'lblHex.Text = "HEX: "
+        Dim strGotowyWynik As String
+        Debug.WriteLine("**************************************")
+        strGotowyWynik = ""
         dblOblicz = CDbl(textbWprowadz.Text)
         Do While dblOblicz >= 16
             ZnajdzNajwiekszaPotege(dblOblicz)
@@ -118,13 +118,12 @@
             dblWynik = Math.Truncate(dblWynik)
             Debug.Write("dblWynik: ")
             Debug.WriteLine(dblWynik)
-            lblHex.Text = lblHex.Text & KonwertujWynikDecNaHex(dblWynik)
+            strGotowyWynik = strGotowyWynik & KonwertujWynikDecNaHex(dblWynik)
             dblOblicz = dblOblicz - (dblWynik * (16 ^ dblMaxPotega))
         Loop
         'Wstaw resztę
         KonwertujWynikDecNaHex(dblOblicz)
-        Return strWynikDecHex
-        'lblHex.Text = "HEX: " & CStr(strWynik)
+        Return strGotowyWynik
     End Function
     Private Sub ZnajdzNajwiekszaPotege(ByRef dblLiczba As Double)
         Dim dblPotega16 As Double
