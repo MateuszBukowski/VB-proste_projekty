@@ -118,8 +118,7 @@
             dblWynik = Math.Truncate(dblWynik)
             Debug.Write("dblWynik: ")
             Debug.WriteLine(dblWynik)
-            KonwertujWynikDecNaHex(dblWynik)
-            lblHex.Text = lblHex.Text & strWynikDecHex
+            lblHex.Text = lblHex.Text & KonwertujWynikDecNaHex(dblWynik)
             dblOblicz = dblOblicz - (dblWynik * (16 ^ dblMaxPotega))
         Loop
         'Wstaw resztę
@@ -142,7 +141,7 @@
         Loop
 
     End Sub
-    Private Sub KonwertujWynikDecNaHex(ByRef dblDec As Double)
+    Private Function KonwertujWynikDecNaHex(ByRef dblDec As Double) As String
         Select Case dblDec
             Case 1, 2, 3, 4, 5, 6, 7, 8, 9
                 strWynikDecHex = CStr(dblWynik)
@@ -161,5 +160,6 @@
             Case 16
                 strWynikDecHex = "G"
         End Select
-    End Sub
+        Return strWynikDecHex
+    End Function
 End Class
