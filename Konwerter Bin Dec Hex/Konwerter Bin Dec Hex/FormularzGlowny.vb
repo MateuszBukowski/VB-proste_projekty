@@ -7,7 +7,7 @@
         ElseIf radioDec.Checked = True Then
             lblBin.Text = "BIN: " & DecToBin(CInt(textbWprowadz.Text))
         ElseIf radioHex.Checked = True Then
-            lblBin.Text = HexToBin(textbWprowadz.Text)
+            lblBin.Text = "HEX: " & HexToBin(textbWprowadz.Text)
         Else
             MessageBox.Show("Wskaż jakiego rodzaju liczbę prowadziłeś.")
         End If
@@ -59,9 +59,10 @@
     End Function
     Private Function HexToBin(ByVal strLiczbaHex As String) As String
         'Hex to bin
-        Dim strWynik As String
-        strWynik = "BIN: Heks"
-        Return strWynik
+        Dim strWynikHexToBin As String
+        strWynikHexToBin = DecToBin(CInt(textbWprowadz.Text))
+        strWynikHexToBin = DecToHex(strWynikHexToBin)
+        Return strWynikHexToBin
     End Function
     Private Function HexToDec(ByVal strLiczbaHex As String) As String
         'HexToDec
@@ -94,9 +95,10 @@
     End Function
     Private Function BinToHex(ByVal strLiczbaHex As String) As String
         'bin to hex
-        Dim strWynik As String
-        strWynik = "Heks"
-        Return strWynik
+        Dim strWynikBinToHex As String
+        strWynikBinToHex = BinToDec(strLiczbaHex)
+        strWynikBinToHex = DecToHex(strWynikBinToHex)
+        Return strWynikBinToHex
     End Function
     Private Function DecToHex(ByRef strLiczbaDec As String) As String
         Dim dblOblicz As Double
