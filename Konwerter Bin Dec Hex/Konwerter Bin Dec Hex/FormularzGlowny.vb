@@ -7,7 +7,7 @@
         ElseIf radioDec.Checked = True Then
             lblBin.Text = "BIN: " & DecToBin(textbWprowadz.Text)
         ElseIf radioHex.Checked = True Then
-            lblBin.Text = "HEX: " & HexToBin(textbWprowadz.Text)
+            lblBin.Text = "BIN: " & HexToBin(textbWprowadz.Text)
         Else
             MessageBox.Show("Wskaż jakiego rodzaju liczbę prowadziłeś.")
         End If
@@ -18,7 +18,7 @@
         ElseIf radioDec.Checked = True Then
             lblDec.Text = "DEC: " & textbWprowadz.Text
         ElseIf radioHex.Checked = True Then
-            lblDec.Text = HexToDec(textbWprowadz.Text)
+            lblDec.Text = "DEC: " & HexToDec(textbWprowadz.Text)
         Else
             MessageBox.Show("Wskaż jakiego rodzaju liczbę prowadziłeś.")
         End If
@@ -64,9 +64,9 @@
         Return strWynikHexToBin
     End Function
     Private Function HexToDec(ByVal strLiczbaHex As String) As String
-        Dim strWynikHexToDec As String
-        strWynikHexToDec = "DEC: Heks"
-        Return strWynikHexToDec
+        'Procedura konwersji z Hex na Dec
+        'Weż pierwszy znak z lewej
+        Return KonwertujCyfreHexNaDec(strLiczbaHex)
     End Function
     Private Function BinToDec(ByVal strLiczbaBin As String) As String
         Dim iloscZnakow As Integer
@@ -128,9 +128,6 @@
         'Procedura zamiany liczb dziesiętnych na system binarny
         'najprostszym sposobem jest Dzielić za każdym razem przez 2 i wpisywać resztę 1 lub 0.
         'Teraz wynik czytamy OD DOŁU DO GÓRY, czyli 1111101
-        'Krok1 - dzielimy liczbe przez 2 i zapisuje resztę 1 lub zero do wyniku ( strWynikiDecToBin = strLiczbaDec /)
-        'Krok2 - dzielimy co zostało przez 2 i zapisujęmy resztę 1 lub zero do wyniku
-        'Krok3 - return wynik
         Dim strWynikiDecToBin As String
         Dim dblWynikiDecToBin As Double
         Dim dblLiczbaDec As Double
@@ -183,5 +180,26 @@
                 strWynikDecHex = "G"
         End Select
         Return strWynikDecHex
+    End Function
+    Private Function KonwertujCyfreHexNaDec(ByRef strHex As String) As String
+        Dim strCyfraHexDec As String
+        strCyfraHexDec = strHex
+        Select Case strHex
+            Case "A"
+                strCyfraHexDec = "10"
+            Case "B"
+                strCyfraHexDec = "11"
+            Case "C"
+                strCyfraHexDec = "12"
+            Case "D"
+                strCyfraHexDec = "13"
+            Case "E"
+                strCyfraHexDec = "14"
+            Case "F"
+                strCyfraHexDec = "15"
+            Case "G"
+                strCyfraHexDec = "16"
+        End Select
+        Return strCyfraHexDec
     End Function
 End Class
