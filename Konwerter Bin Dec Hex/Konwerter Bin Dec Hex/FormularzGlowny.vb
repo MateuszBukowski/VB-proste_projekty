@@ -1,7 +1,5 @@
 ﻿Public Class FormularzGlowny
-    Private dblRoznica As Double
     Private dblWynik As Double
-    Private dblMaxPotega As Double
     Private strWynikDecHex As String
     Private Sub BtnBin_Click(sender As Object, e As EventArgs) Handles btnBin.Click
         If radioBin.Checked = True Then
@@ -80,8 +78,6 @@
         Dim strWynik As String
         'Długość ciągu znaków
         iloscZnakow = CInt(Len(strLiczbaBin))
-        'GetChar(String, Int32)
-        'lblDec.Text = "DEC: "
         potega = 0
         suma = 0
         'Od ostatniego znaku do pierwszego
@@ -93,8 +89,6 @@
             End If
             potega = potega + 1
         Next index
-        'Wypełij etykiete DEC wynikiem
-        'lblDec.Text = "DEC: " & CStr(suma)
         strWynik = CStr(suma)
         Return strWynik
     End Function
@@ -107,11 +101,12 @@
     Private Function DecToHex(ByRef strLiczbaDec As String) As String
         Dim dblOblicz As Double
         Dim strGotowyWynik As String
+        Dim dblMaxPotega As Double
         Debug.WriteLine("**************************************")
         strGotowyWynik = ""
-        dblOblicz = CDbl(textbWprowadz.Text)
+        dblOblicz = CDbl(strLiczbaDec)
         Do While dblOblicz >= 16
-            ZnajdzNajwiekszaPotege(dblOblicz)
+            dblMaxPotega = ZnajdzNajwiekszaPotege16(dblOblicz)
             dblWynik = dblOblicz / (16 ^ dblMaxPotega)
             Debug.Write("dblWynik: ")
             Debug.WriteLine(dblWynik)
@@ -122,12 +117,17 @@
             dblOblicz = dblOblicz - (dblWynik * (16 ^ dblMaxPotega))
         Loop
         'Wstaw resztę
-        KonwertujWynikDecNaHex(dblOblicz)
+        If CInt(strLiczbaDec) <= 16 Then
+            strGotowyWynik = KonwertujWynikDecNaHex(dblOblicz)
+        Else
+            strGotowyWynik = strGotowyWynik & KonwertujWynikDecNaHex(dblOblicz)
+        End If
         Return strGotowyWynik
     End Function
-    Private Sub ZnajdzNajwiekszaPotege(ByRef dblLiczba As Double)
+    Private Function ZnajdzNajwiekszaPotege16(ByRef dblLiczba As Double) As Double
         Dim dblPotega16 As Double
         Dim dblWynikPotegi As Double
+        Dim dblMaxPotega As Double
         dblPotega16 = 0
         dblWynikPotegi = 16 ^ dblPotega16
         dblMaxPotega = 0
@@ -138,8 +138,8 @@
             dblPotega16 = dblPotega16 + 1
             dblWynikPotegi = 16 ^ dblPotega16
         Loop
-
-    End Sub
+        Return dblMaxPotega
+    End Function
     Private Function KonwertujWynikDecNaHex(ByRef dblDec As Double) As String
         Select Case dblDec
             Case 1, 2, 3, 4, 5, 6, 7, 8, 9
