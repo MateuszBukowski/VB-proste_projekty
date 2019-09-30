@@ -65,8 +65,22 @@
     End Function
     Private Function HexToDec(ByVal strLiczbaHex As String) As String
         'Procedura konwersji z Hex na Dec
-        'Weż pierwszy znak z lewej
-        Return KonwertujCyfreHexNaDec(strLiczbaHex)
+        '1 | 2  | 3
+        '1 | 16 | 256
+        Dim intIloscZnakow As Integer
+        Dim dblWynikHex As Double
+        Dim dblWynikHexZnak As Double
+        Dim strZnakHex As String
+        'Długość ciągu znaków
+        intIloscZnakow = CInt(Len(strLiczbaHex))
+        dblWynikHex = 0
+        'Od ostatniego znaku do pierwszego
+        For index As Integer = 1 To intIloscZnakow Step 1
+            strZnakHex = GetChar(strLiczbaHex, index)
+            dblWynikHexZnak = (CDbl(KonwertujCyfreHexNaDec(strZnakHex))) * (16 ^ (index - 1))
+            dblWynikHex = dblWynikHexZnak + dblWynikHex
+        Next
+        Return CStr(dblWynikHex)
     End Function
     Private Function BinToDec(ByVal strLiczbaBin As String) As String
         Dim iloscZnakow As Integer
