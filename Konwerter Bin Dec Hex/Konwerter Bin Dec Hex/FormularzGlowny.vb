@@ -5,7 +5,7 @@
         If radioBin.Checked = True Then
             lblBin.Text = "BIN: " & textbWprowadz.Text
         ElseIf radioDec.Checked = True Then
-            lblBin.Text = "BIN: " & DecToBin(CInt(textbWprowadz.Text))
+            lblBin.Text = "BIN: " & DecToBin(textbWprowadz.Text)
         ElseIf radioHex.Checked = True Then
             lblBin.Text = "HEX: " & HexToBin(textbWprowadz.Text)
         Else
@@ -58,17 +58,15 @@
         Return strModulo
     End Function
     Private Function HexToBin(ByVal strLiczbaHex As String) As String
-        'Hex to bin
         Dim strWynikHexToBin As String
-        strWynikHexToBin = DecToBin(CInt(textbWprowadz.Text))
-        strWynikHexToBin = DecToHex(strWynikHexToBin)
+        strWynikHexToBin = HexToDec(strLiczbaHex)
+        strWynikHexToBin = DecToBin(strWynikHexToBin)
         Return strWynikHexToBin
     End Function
     Private Function HexToDec(ByVal strLiczbaHex As String) As String
-        'HexToDec
-        Dim strWynik As String
-        strWynik = "DEC: Heks"
-        Return strWynik
+        Dim strWynikHexToDec As String
+        strWynikHexToDec = "DEC: Heks"
+        Return strWynikHexToDec
     End Function
     Private Function BinToDec(ByVal strLiczbaBin As String) As String
         Dim iloscZnakow As Integer
@@ -125,6 +123,29 @@
             strGotowyWynik = strGotowyWynik & KonwertujWynikDecNaHex(dblOblicz)
         End If
         Return strGotowyWynik
+    End Function
+    Private Function DecToBin(ByVal strLiczbaDec As String) As String
+        'Procedura zamiany liczb dziesiętnych na system binarny
+        'najprostszym sposobem jest Dzielić za każdym razem przez 2 i wpisywać resztę 1 lub 0.
+        'Teraz wynik czytamy OD DOŁU DO GÓRY, czyli 1111101
+        'Krok1 - dzielimy liczbe przez 2 i zapisuje resztę 1 lub zero do wyniku ( strWynikiDecToBin = strLiczbaDec /)
+        'Krok2 - dzielimy co zostało przez 2 i zapisujęmy resztę 1 lub zero do wyniku
+        'Krok3 - return wynik
+        Dim strWynikiDecToBin As String
+        Dim dblWynikiDecToBin As Double
+        Dim dblLiczbaDec As Double
+        dblLiczbaDec = CDbl(strLiczbaDec)
+        strWynikiDecToBin = ""
+        Do Until dblLiczbaDec = 0
+            Debug.Write("dblLiczbaDec: ")
+            Debug.WriteLine(dblLiczbaDec)
+            dblWynikiDecToBin = (dblLiczbaDec Mod 2)
+            strWynikiDecToBin = CStr(dblWynikiDecToBin) & strWynikiDecToBin
+            Debug.Write("strWynikiDecToBin: ")
+            Debug.WriteLine(strWynikiDecToBin)
+            dblLiczbaDec = Math.Truncate(dblLiczbaDec / 2)
+        Loop
+        Return strWynikiDecToBin
     End Function
     Private Function ZnajdzNajwiekszaPotege16(ByRef dblLiczba As Double) As Double
         Dim dblPotega16 As Double
