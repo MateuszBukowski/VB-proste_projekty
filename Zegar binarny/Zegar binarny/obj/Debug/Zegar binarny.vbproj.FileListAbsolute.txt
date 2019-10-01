@@ -1,0 +1,12 @@
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\bin\Debug\Zegar binarny.exe.config
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\bin\Debug\Zegar binarny.exe
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\bin\Debug\Zegar binarny.pdb
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\bin\Debug\Zegar binarny.xml
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.vbprojAssemblyReference.cache
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar_binarny.FormularzGlowny.resources
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar_binarny.Resources.resources
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.vbproj.GenerateResource.cache
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.vbproj.CoreCompileInputs.cache
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.exe
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.xml
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.pdb

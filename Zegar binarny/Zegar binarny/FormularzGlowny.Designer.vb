@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormularzGlowny
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,14 @@ Partial Class FormularzGlowny
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblGodziny = New System.Windows.Forms.Label()
         Me.lblMinuty = New System.Windows.Forms.Label()
         Me.lblSekundy = New System.Windows.Forms.Label()
         Me.lblPotegi2 = New System.Windows.Forms.Label()
+        Me.tmrAktualnyCzas = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'lblGodziny
@@ -68,6 +70,11 @@ Partial Class FormularzGlowny
         Me.lblPotegi2.TabIndex = 3
         Me.lblPotegi2.Text = "32  16  8   4   2   1"
         '
+        'tmrAktualnyCzas
+        '
+        Me.tmrAktualnyCzas.Enabled = True
+        Me.tmrAktualnyCzas.Interval = 1000
+        '
         'FormularzGlowny
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -88,4 +95,5 @@ Partial Class FormularzGlowny
     Friend WithEvents lblMinuty As Label
     Friend WithEvents lblSekundy As Label
     Friend WithEvents lblPotegi2 As Label
+    Friend WithEvents tmrAktualnyCzas As Timer
 End Class
