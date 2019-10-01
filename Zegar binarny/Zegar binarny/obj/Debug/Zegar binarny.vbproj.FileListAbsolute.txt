@@ -10,3 +10,7 @@ D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binar
 D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.exe
 D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.xml
 D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.pdb
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\bin\Debug\Zegar binarny.exe.manifest
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\bin\Debug\Zegar binarny.application
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.exe.manifest
+D:\Projekty\VB-proste_projekty\Zegar binarny\Zegar binarny\obj\Debug\Zegar binarny.application
