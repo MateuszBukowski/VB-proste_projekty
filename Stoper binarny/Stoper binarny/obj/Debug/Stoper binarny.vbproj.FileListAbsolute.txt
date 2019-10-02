@@ -1,0 +1,16 @@
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\bin\Debug\Stoper binarny.exe.config
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\bin\Debug\Stoper binarny.exe
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\bin\Debug\Stoper binarny.pdb
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\bin\Debug\Stoper binarny.xml
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper binarny.vbprojAssemblyReference.cache
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper_binarny.FormularzGlowny.resources
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper_binarny.Resources.resources
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper binarny.vbproj.GenerateResource.cache
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper binarny.vbproj.CoreCompileInputs.cache
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper binarny.exe
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper binarny.xml
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper binarny.pdb
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\bin\Debug\Stoper binarny.exe.manifest
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\bin\Debug\Stoper binarny.application
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper binarny.exe.manifest
+D:\Projekty\Moje proste projekty VB\Stoper binarny\Stoper binarny\obj\Debug\Stoper binarny.application
