@@ -1,0 +1,16 @@
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\bin\Debug\Minutnik binarny.exe.config
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\bin\Debug\Minutnik binarny.exe
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\bin\Debug\Minutnik binarny.pdb
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\bin\Debug\Minutnik binarny.xml
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik binarny.vbprojAssemblyReference.cache
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik_binarny.FormularzGlowny.resources
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik_binarny.Resources.resources
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik binarny.vbproj.GenerateResource.cache
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik binarny.vbproj.CoreCompileInputs.cache
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik binarny.exe
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik binarny.xml
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik binarny.pdb
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\bin\Debug\Minutnik binarny.exe.manifest
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\bin\Debug\Minutnik binarny.application
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik binarny.exe.manifest
+D:\Projekty\VB-proste_projekty\Minutnik binarny\Minutnik binarny\obj\Debug\Minutnik binarny.application

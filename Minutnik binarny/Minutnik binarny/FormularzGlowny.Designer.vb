@@ -22,6 +22,7 @@ Partial Class FormularzGlowny
     'Nie należy modyfikować za pomocą edytora kodu.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnUstaw = New System.Windows.Forms.Button()
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnStop = New System.Windows.Forms.Button()
@@ -29,17 +30,19 @@ Partial Class FormularzGlowny
         Me.lblGodziny = New System.Windows.Forms.Label()
         Me.lblMinuty = New System.Windows.Forms.Label()
         Me.lblSekundy = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.cobGodziny = New System.Windows.Forms.ComboBox()
+        Me.cobMinuty = New System.Windows.Forms.ComboBox()
+        Me.cobSekundy = New System.Windows.Forms.ComboBox()
         Me.lblWybierzGodziny = New System.Windows.Forms.Label()
         Me.lblWybierzMinuty = New System.Windows.Forms.Label()
         Me.lblWybierSekundy = New System.Windows.Forms.Label()
+        Me.tmrOdlicz = New System.Windows.Forms.Timer(Me.components)
+        Me.btnReset = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnUstaw
         '
-        Me.btnUstaw.Location = New System.Drawing.Point(21, 27)
+        Me.btnUstaw.Location = New System.Drawing.Point(54, 12)
         Me.btnUstaw.Name = "btnUstaw"
         Me.btnUstaw.Size = New System.Drawing.Size(75, 23)
         Me.btnUstaw.TabIndex = 0
@@ -48,7 +51,7 @@ Partial Class FormularzGlowny
         '
         'btnStart
         '
-        Me.btnStart.Location = New System.Drawing.Point(126, 27)
+        Me.btnStart.Location = New System.Drawing.Point(160, 12)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 1
@@ -57,7 +60,7 @@ Partial Class FormularzGlowny
         '
         'btnStop
         '
-        Me.btnStop.Location = New System.Drawing.Point(222, 27)
+        Me.btnStop.Location = New System.Drawing.Point(160, 41)
         Me.btnStop.Name = "btnStop"
         Me.btnStop.Size = New System.Drawing.Size(75, 23)
         Me.btnStop.TabIndex = 2
@@ -68,11 +71,11 @@ Partial Class FormularzGlowny
         '
         Me.lblPotega2.AutoSize = True
         Me.lblPotega2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.lblPotega2.Location = New System.Drawing.Point(70, 162)
+        Me.lblPotega2.Location = New System.Drawing.Point(81, 165)
         Me.lblPotega2.Name = "lblPotega2"
-        Me.lblPotega2.Size = New System.Drawing.Size(227, 31)
+        Me.lblPotega2.Size = New System.Drawing.Size(190, 31)
         Me.lblPotega2.TabIndex = 3
-        Me.lblPotega2.Text = "64 32 16 8  4  2  1"
+        Me.lblPotega2.Text = "32 16 8  4  2  1"
         '
         'lblGodziny
         '
@@ -80,9 +83,9 @@ Partial Class FormularzGlowny
         Me.lblGodziny.Font = New System.Drawing.Font("Microsoft Sans Serif", 40.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.lblGodziny.Location = New System.Drawing.Point(10, 196)
         Me.lblGodziny.Name = "lblGodziny"
-        Me.lblGodziny.Size = New System.Drawing.Size(305, 63)
+        Me.lblGodziny.Size = New System.Drawing.Size(275, 63)
         Me.lblGodziny.TabIndex = 4
-        Me.lblGodziny.Text = "H: 0000000"
+        Me.lblGodziny.Text = "H: 000000"
         '
         'lblMinuty
         '
@@ -90,9 +93,9 @@ Partial Class FormularzGlowny
         Me.lblMinuty.Font = New System.Drawing.Font("Microsoft Sans Serif", 40.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.lblMinuty.Location = New System.Drawing.Point(2, 273)
         Me.lblMinuty.Name = "lblMinuty"
-        Me.lblMinuty.Size = New System.Drawing.Size(311, 63)
+        Me.lblMinuty.Size = New System.Drawing.Size(281, 63)
         Me.lblMinuty.TabIndex = 5
-        Me.lblMinuty.Text = "M: 0000000"
+        Me.lblMinuty.Text = "M: 000000"
         '
         'lblSekundy
         '
@@ -100,38 +103,44 @@ Partial Class FormularzGlowny
         Me.lblSekundy.Font = New System.Drawing.Font("Microsoft Sans Serif", 40.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.lblSekundy.Location = New System.Drawing.Point(10, 344)
         Me.lblSekundy.Name = "lblSekundy"
-        Me.lblSekundy.Size = New System.Drawing.Size(302, 63)
+        Me.lblSekundy.Size = New System.Drawing.Size(272, 63)
         Me.lblSekundy.TabIndex = 6
-        Me.lblSekundy.Text = "S: 0000000"
+        Me.lblSekundy.Text = "S: 000000"
         '
-        'ComboBox1
+        'cobGodziny
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(21, 90)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(60, 21)
-        Me.ComboBox1.TabIndex = 8
+        Me.cobGodziny.FormattingEnabled = True
+        Me.cobGodziny.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12"})
+        Me.cobGodziny.Location = New System.Drawing.Point(21, 105)
+        Me.cobGodziny.Name = "cobGodziny"
+        Me.cobGodziny.Size = New System.Drawing.Size(60, 21)
+        Me.cobGodziny.TabIndex = 8
+        Me.cobGodziny.Text = "0"
         '
-        'ComboBox2
+        'cobMinuty
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(126, 90)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(60, 21)
-        Me.ComboBox2.TabIndex = 9
+        Me.cobMinuty.FormattingEnabled = True
+        Me.cobMinuty.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"})
+        Me.cobMinuty.Location = New System.Drawing.Point(126, 105)
+        Me.cobMinuty.Name = "cobMinuty"
+        Me.cobMinuty.Size = New System.Drawing.Size(60, 21)
+        Me.cobMinuty.TabIndex = 9
+        Me.cobMinuty.Text = "0"
         '
-        'ComboBox3
+        'cobSekundy
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(222, 90)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(60, 21)
-        Me.ComboBox3.TabIndex = 10
+        Me.cobSekundy.FormattingEnabled = True
+        Me.cobSekundy.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"})
+        Me.cobSekundy.Location = New System.Drawing.Point(222, 105)
+        Me.cobSekundy.Name = "cobSekundy"
+        Me.cobSekundy.Size = New System.Drawing.Size(60, 21)
+        Me.cobSekundy.TabIndex = 10
+        Me.cobSekundy.Text = "0"
         '
         'lblWybierzGodziny
         '
         Me.lblWybierzGodziny.AutoSize = True
-        Me.lblWybierzGodziny.Location = New System.Drawing.Point(18, 68)
+        Me.lblWybierzGodziny.Location = New System.Drawing.Point(18, 83)
         Me.lblWybierzGodziny.Name = "lblWybierzGodziny"
         Me.lblWybierzGodziny.Size = New System.Drawing.Size(48, 13)
         Me.lblWybierzGodziny.TabIndex = 11
@@ -140,7 +149,7 @@ Partial Class FormularzGlowny
         'lblWybierzMinuty
         '
         Me.lblWybierzMinuty.AutoSize = True
-        Me.lblWybierzMinuty.Location = New System.Drawing.Point(123, 68)
+        Me.lblWybierzMinuty.Location = New System.Drawing.Point(123, 83)
         Me.lblWybierzMinuty.Name = "lblWybierzMinuty"
         Me.lblWybierzMinuty.Size = New System.Drawing.Size(41, 13)
         Me.lblWybierzMinuty.TabIndex = 12
@@ -149,23 +158,37 @@ Partial Class FormularzGlowny
         'lblWybierSekundy
         '
         Me.lblWybierSekundy.AutoSize = True
-        Me.lblWybierSekundy.Location = New System.Drawing.Point(219, 68)
+        Me.lblWybierSekundy.Location = New System.Drawing.Point(219, 83)
         Me.lblWybierSekundy.Name = "lblWybierSekundy"
         Me.lblWybierSekundy.Size = New System.Drawing.Size(52, 13)
         Me.lblWybierSekundy.TabIndex = 13
         Me.lblWybierSekundy.Text = "Sekundy:"
         '
+        'tmrOdlicz
+        '
+        Me.tmrOdlicz.Interval = 1000
+        '
+        'btnReset
+        '
+        Me.btnReset.Location = New System.Drawing.Point(54, 41)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnReset.TabIndex = 14
+        Me.btnReset.Text = "Reset"
+        Me.btnReset.UseVisualStyleBackColor = True
+        '
         'FormularzGlowny
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(324, 421)
+        Me.ClientSize = New System.Drawing.Size(314, 416)
+        Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.lblWybierSekundy)
         Me.Controls.Add(Me.lblWybierzMinuty)
         Me.Controls.Add(Me.lblWybierzGodziny)
-        Me.Controls.Add(Me.ComboBox3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cobSekundy)
+        Me.Controls.Add(Me.cobMinuty)
+        Me.Controls.Add(Me.cobGodziny)
         Me.Controls.Add(Me.lblSekundy)
         Me.Controls.Add(Me.lblMinuty)
         Me.Controls.Add(Me.lblGodziny)
@@ -187,10 +210,12 @@ Partial Class FormularzGlowny
     Friend WithEvents lblGodziny As Label
     Friend WithEvents lblMinuty As Label
     Friend WithEvents lblSekundy As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents cobGodziny As ComboBox
+    Friend WithEvents cobMinuty As ComboBox
+    Friend WithEvents cobSekundy As ComboBox
     Friend WithEvents lblWybierzGodziny As Label
     Friend WithEvents lblWybierzMinuty As Label
     Friend WithEvents lblWybierSekundy As Label
+    Friend WithEvents tmrOdlicz As Timer
+    Friend WithEvents btnReset As Button
 End Class
