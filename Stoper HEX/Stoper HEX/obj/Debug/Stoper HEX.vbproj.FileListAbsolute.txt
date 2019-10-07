@@ -1,0 +1,12 @@
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\bin\Debug\Stoper HEX.exe.config
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\bin\Debug\Stoper HEX.exe
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\bin\Debug\Stoper HEX.pdb
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\bin\Debug\Stoper HEX.xml
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\obj\Debug\Stoper HEX.vbprojAssemblyReference.cache
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\obj\Debug\Stoper_HEX.FormularzGlowny.resources
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\obj\Debug\Stoper_HEX.Resources.resources
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\obj\Debug\Stoper HEX.vbproj.GenerateResource.cache
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\obj\Debug\Stoper HEX.vbproj.CoreCompileInputs.cache
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\obj\Debug\Stoper HEX.exe
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\obj\Debug\Stoper HEX.xml
+D:\Projekty\VB-proste_projekty\Stoper HEX\Stoper HEX\obj\Debug\Stoper HEX.pdb
