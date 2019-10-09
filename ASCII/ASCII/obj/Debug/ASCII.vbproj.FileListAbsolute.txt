@@ -1,0 +1,12 @@
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\bin\Debug\ASCII.exe.config
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\bin\Debug\ASCII.exe
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\bin\Debug\ASCII.pdb
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\bin\Debug\ASCII.xml
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\obj\Debug\ASCII.vbprojAssemblyReference.cache
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\obj\Debug\ASCII.FormularzGlowny.resources
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\obj\Debug\ASCII.Resources.resources
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\obj\Debug\ASCII.vbproj.GenerateResource.cache
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\obj\Debug\ASCII.vbproj.CoreCompileInputs.cache
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\obj\Debug\ASCII.exe
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\obj\Debug\ASCII.xml
+D:\Projekty\VB-proste_projekty\ASCII\ASCII\obj\Debug\ASCII.pdb
