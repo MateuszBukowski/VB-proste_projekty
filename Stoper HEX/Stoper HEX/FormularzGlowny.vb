@@ -4,7 +4,7 @@
     Private intMinuty As Integer = 0
     Private intGodziny As Integer = 0
     Private dblWynik As Double
-    Private strWynikDecHex As String
+
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         lblGodziny.Text = "H: 00"
         lblMinuty.Text = "M: 00"
@@ -24,8 +24,7 @@
         Dim strMiliSekundyHEX As String
         If intMiliSekundy <= 100 Then
             intMiliSekundy = intMiliSekundy + 1
-            strMiliSekundyHEX = KonwertujDecNaHex(CStr(intMiliSekundy))
-            'strMiliSekundyHEX = SprawdzZera(strMiliSekundyHEX)
+            strMiliSekundyHEX = DecToHex(CStr(intMiliSekundy))
             lblMiliSekundy.Text = "mS: " & strMiliSekundyHEX
         Else
             intMiliSekundy = 0
@@ -36,8 +35,7 @@
         Dim strSekundyHEX As String
         If intSekundy <= 60 Then
             intSekundy = intSekundy + 1
-            strSekundyHEX = KonwertujDecNaHex(CStr(intSekundy))
-            'strSekundyHEX = SprawdzZera(strSekundyHEX)
+            strSekundyHEX = DecToHex(CStr(intSekundy))
             lblSekundy.Text = "S: " & strSekundyHEX
         Else
             intSekundy = 0
@@ -48,8 +46,7 @@
         Dim strMinutyHEX As String
         If intMinuty <= 60 Then
             intMinuty = intMinuty + 1
-            strMinutyHEX = KonwertujDecNaHex(CStr(intMinuty))
-            'strMinutyHEX = SprawdzZera(strMinutyHEX)
+            strMinutyHEX = DecToHex(CStr(intMinuty))
             lblMinuty.Text = "M: " & strMinutyHEX
         Else
             intMinuty = 0
@@ -60,37 +57,20 @@
         Dim strGodzinyHEX As String
         If intGodziny <= 60 Then
             intGodziny = intGodziny + 1
-            strGodzinyHEX = KonwertujDecNaHex(CStr(intGodziny))
-            'strGodzinyHEX = SprawdzZera(strGodzinyHEX)
+            strGodzinyHEX = DecToHex(CStr(intGodziny))
             lblGodziny.Text = "H: " & strGodzinyHEX
         Else
             TmrCzas.Enabled = False
         End If
     End Sub
-    Private Function ZnajdzNajwiekszaPotege16(ByRef dblLiczba As Double) As Double
-        Dim dblPotega16 As Double
-        Dim dblWynikPotegi As Double
-        Dim dblMaxPotega As Double
-        dblPotega16 = 0
-        dblWynikPotegi = 16 ^ dblPotega16
-        dblMaxPotega = 0
-        Do While dblWynikPotegi <= dblLiczba
-            dblMaxPotega = dblPotega16
-            Debug.Write("dblMaxPotega: ")
-            Debug.WriteLine(dblMaxPotega)
-            dblPotega16 = dblPotega16 + 1
-            dblWynikPotegi = 16 ^ dblPotega16
-        Loop
-        Return dblMaxPotega
-    End Function
-    Private Function KonwertujDecNaHex(ByRef strLiczbaDec As String) As String
+    Private Function DecToHex(ByRef strLiczbaDec As String) As String
         Dim dblOblicz As Double
         Dim strGotowyWynik As String
         Dim dblMaxPotega As Double
         Debug.WriteLine("**************************************")
         strGotowyWynik = ""
         dblOblicz = CDbl(strLiczbaDec)
-        Do While dblOblicz >= 16
+        If dblOblicz >= 16 Then
             dblMaxPotega = ZnajdzNajwiekszaPotege16(dblOblicz)
             dblWynik = dblOblicz / (16 ^ dblMaxPotega)
             Debug.Write("dblWynik: ")
@@ -100,20 +80,17 @@
             Debug.WriteLine(dblWynik)
             strGotowyWynik = strGotowyWynik & KonwertujWynikDecNaHex(dblWynik)
             dblOblicz = dblOblicz - (dblWynik * (16 ^ dblMaxPotega))
-        Loop
-        'Wstaw resztę
-        If dblOblicz <= 16 Then
-            dblWynik = CDbl(strLiczbaDec)
+            'Wstaw resztę
+        ElseIf CInt(strLiczbaDec) <= 16 Then
             strGotowyWynik = KonwertujWynikDecNaHex(dblOblicz)
-        Else
-            strGotowyWynik = strGotowyWynik & KonwertujWynikDecNaHex(dblOblicz)
         End If
         Return strGotowyWynik
     End Function
     Private Function KonwertujWynikDecNaHex(ByRef dblDec As Double) As String
+        Dim strWynikDecHex As String
         Select Case dblDec
-            Case 1, 2, 3, 4, 5, 6, 7, 8, 9
-                strWynikDecHex = CStr(dblWynik)
+            Case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+                strWynikDecHex = CStr(dblDec)
             Case 10
                 strWynikDecHex = "A"
             Case 11
@@ -131,20 +108,20 @@
         End Select
         Return strWynikDecHex
     End Function
-    Private Function SprawdzZera(ByVal strCzas As String) As String
-        Dim intIloscZnakow As Integer = 0
-        Dim intIleZerDodac As Integer = 0
-        Dim strCzasUstawioneZera As String = ""
-        intIloscZnakow = CInt(Len(strCzas))
-        If intIloscZnakow < 2 Then
-            intIleZerDodac = 2 - intIloscZnakow
-            strCzasUstawioneZera = strCzas
-            For index As Integer = intIleZerDodac To 1 Step -1
-                strCzasUstawioneZera = "0" & strCzasUstawioneZera
-            Next
-        Else
-            strCzasUstawioneZera = strCzas
-        End If
-        Return strCzasUstawioneZera
+    Private Function ZnajdzNajwiekszaPotege16(ByRef dblLiczba As Double) As Double
+        Dim dblPotega16 As Double
+        Dim dblWynikPotegi As Double
+        Dim dblMaxPotega As Double
+        dblPotega16 = 0
+        dblWynikPotegi = 16 ^ dblPotega16
+        dblMaxPotega = 0
+        Do While dblWynikPotegi <= dblLiczba
+            dblMaxPotega = dblPotega16
+            Debug.Write("dblMaxPotega: ")
+            Debug.WriteLine(dblMaxPotega)
+            dblPotega16 = dblPotega16 + 1
+            dblWynikPotegi = 16 ^ dblPotega16
+        Loop
+        Return dblMaxPotega
     End Function
 End Class
